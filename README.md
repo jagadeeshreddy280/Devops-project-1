@@ -102,3 +102,21 @@ IN GITHUB:
 4.	Add in Payload URL --> save it.
 
 5.	Change anything or push any file into git repo we can see job is triggered automatically.
+
+NOTE: 
+Save Git & Docker & nomad token in Jenkins
+
+1. Go to Manage Jenkins  Credentials  Add New Credentials 
+** Need to connect Github to jenkins:
+   
+2. Go to settings-->developer settings-->token-->new token (tick all boxes) -->create
+ 
+3. Copy token use as password
+Jenkins: ghp_Lmxn7epc
+
+Build Both the pipelines and check in Nomad UI.
+
+Nomad ec2:
+
+1. Copy publicip:4646 on browser
+2. We can see  jobs are in Running state  --> copy public ip:80 --> Application Will open
