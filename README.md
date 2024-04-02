@@ -72,7 +72,9 @@ jenkins ec2:
 10.sudo chmod 666 /var/run/docker.sock
 
 11.copy publicip:8080 on browser 
+
   username: admin
+  
   password: cat /var/lib/jenkins/secrets/initialAdminPassword
   
 12.Go to manage jenkins--> plugins --> nomad
@@ -97,6 +99,7 @@ IN GITHUB:
 2. Inside repo --> settings -->click webhooks -->click add webhooks
 
 3. Copy Jenkins url like http://2.33.344.44:8080 and Add /github-webhook/
+
  Example: http://35.154.114.196:8080/github-webhook/
 
 4.	Add in Payload URL --> save it.
