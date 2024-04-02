@@ -4,10 +4,11 @@ Deploy an Application on Nomad Workload cluster using CI/CD,AWS,GitHub
 ---
 pre-requisite:-
 ---
-1. cloud platform       : AWS
+1. cloud platform       : AWS(IAM,EC2,VPC)
 2. SCM                  : Github
 3. CI/CD                : Jenkins
 4. Container platform   : DockerHub
+5. Orchestration        : Nomad cluster
 
 ****Note:jenkins & nomad running on different ec2
          allow 4646 port for nomad & 8080 port for jenkins
