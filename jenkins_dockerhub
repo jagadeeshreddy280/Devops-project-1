@@ -1,0 +1,56 @@
+pipeline{
+agent any
+environment {
+              IMAGE_TAG ="${BUILD_NUMBER}"
+              DOCKERHUB_CREDENTIALS=credentials('dockerhublogin')
+              NOMAD_ADDR = 'http://54.152.36.2:4646'             ### Need to replace public ip of Nomad ec2
+              NOMAD_TOKEN= credentials('Nomad-token')             ## Token is Create at Nomad cluster
+           }
+stages{
+stage('GIT'){
+steps{
+checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitlogin',url: ' https://github.com/jagadeeshreddy280/app-frontend.git']])
+}
+}
+stage('Docker Image Build'){
+steps{
+sh 'docker build -t jagadeesh/app:${BUILD_NUMBER} .'
+}
+}
+stage('Login') {
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+stage('Push to Dockerhub'){
+steps{
+sh 'docker push jagadeesh/app:${BUILD_NUMBER}'
+ }
+ }
+stage('GITUpdate'){
+steps{
+checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitlogin',url: ' https://github.com/jagadeeshreddy280/app-nomad.git']])
+}
+}
+stage('update in git'){
+steps{
+script{
+sh  "cat ecr.nomad"
+sh  "sed -i 's+jagadeesh/app.*+jagadeesh/app:${BUILD_NUMBER}\"+g' ecr.nomad"
+sh  "cat ecr.nomad"
+sh  "git add ecr.nomad"
+sh  "git commit -m 'update the dockerimage with new tag:${IMAGE_TAG}'"
+withCredentials([gitUsernamePassword(credentialsId: 'Gitlogin', gitToolName: 'Default')]) {
+    sh  "git push git@github.com:jagadeesh/app-nomad.git HEAD:main"
+}
+}
+}
+}
+stage('Deploy To Nomad') {
+            
+            steps {
+                sh 'nomad  run  ecr.nomad'
+            }
+        }
+}
+}
