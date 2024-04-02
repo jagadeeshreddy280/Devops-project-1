@@ -1,4 +1,10 @@
 # Devops-project-1
+Any Queries related
+
+Gmail : jagadeeshbhavanam@gmail.com
+
+linkedin : https://www.linkedin.com/in/bhavanam-jagadeeswara-reddy-1b85801b6
+
 
 Deploy an Application on Nomad Workload cluster using CI/CD,AWS,GitHub
 ---
