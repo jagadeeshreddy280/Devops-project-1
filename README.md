@@ -10,6 +10,8 @@ pre-requisite:-
 4. Container platform   : DockerHub
 5. Orchestration        : Nomad cluster
 
+Add Github,Nomad,dockerhub plugins in jenkins
+
 ****Note:jenkins & nomad running on different ec2
          allow 4646 port for nomad & 8080 port for jenkins
 
