@@ -3,7 +3,7 @@ agent any
 environment {
               IMAGE_TAG ="${BUILD_NUMBER}"
               DOCKERHUB_CREDENTIALS=credentials('dockerhublogin')
-              NOMAD_ADDR = 'http://54.152.36.2:4646'             ### Need to replace public ip of Nomad ec2
+              NOMAD_ADDR = 'http://54.15.2:4646'             ### Need to replace public ip of Nomad ec2
               NOMAD_TOKEN= credentials('Nomad-token')             ## Token is Create at Nomad cluster
            }
 stages{
