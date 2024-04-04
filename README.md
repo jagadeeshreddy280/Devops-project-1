@@ -137,6 +137,15 @@ Build nomad job
 NOTE: Before building need to add plugins,save cred related to github,dockerhub,nomad. 
       add nomad pubilc ip:4646 on jenkins master configuration on node section.
 
+Github links
+---
+
+https://github.com/jagadeeshreddy280/app-frontend
+
+https://github.com/jagadeeshreddy280/app-nomad
+
+
+
 Build Both the pipelines and check in Nomad UI.
 
 Nomad ec2:
