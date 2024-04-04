@@ -130,6 +130,13 @@ Save Git & Docker & nomad token in Jenkins
 3. Copy token use as password
 Jenkins: ghp_Lmxn7epc
 
+Build nomad job
+---
+1. Create a pipeline --> add jenkinsfile  --> click on build
+
+NOTE: Before building need to add plugins,save cred related to github,dockerhub,nomad. 
+      add nomad pubilc ip:4646 on jenkins master configuration on node section.
+
 Build Both the pipelines and check in Nomad UI.
 
 Nomad ec2:
