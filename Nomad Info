@@ -1,0 +1,105 @@
+-->Nomad is a flexible application scheduler and orchestrator that’s 
+simple to learn, quick to adopt, and easy to manage.
+-->we can Schedule, deploy, and manage any application workload
+-->Nomad handles filesystem isolation, networking, and resource 
+management for containers, binaries, VMs, Java JARs, and more.
+-->Scale from a single instance to thousands of nodes in a cluster and 
+deploy across private datacenters or multi-cloud environments.
+-->Manage workloads for edge devices like sensors or microcomputers that 
+aren’t continuously connected to central cloud centers.
+-->integrations with Terraform, Vault, Consul, and Waypoint.
+-->Nomad supports a wide range of task drivers such as Docker, Java and 
+binaries running natively on the host operating system.
+
+Nomad is a cluster manager, designed for both long lived services and 
+short lived batch processing workloads. Developers use a declarative job
+specification to submit work, and Nomad ensures constraints are satisfied
+and resource utilization is optimized by efficient task packing. 
+Nomad supports all major operating systems and virtualized, containerized,
+or standalone applications.
+Nomad is a tool in the Cluster Management category of a tech stack.
+
+
+nano frontend.nomad
+
+job "frontend" {
+    datacenters = ["dc1"]
+    type = "service"
+    group "frontend"{
+        count = 1
+        task "frontend" {
+             driver = "docker"
+             config {
+                    image = "thedojoseries/frontend"
+}
+}
+}
+}
+
+-->nomad plan frontend.nomad
+o/p:
++ Job: "frontend"
++ Task Group: "frontend" (1 create)
+  + Task: "frontend" (forces create)
+
+Scheduler dry-run:
+- All tasks successfully allocated.
+
+Job Modify Index: 0
+To submit the job with version verification run:
+
+nomad job run -check-index 0 frontend.nomad
+
+-->nomad run frontend.nomad
+o/p:
+==> 2023-11-23T10:16:24Z: Monitoring evaluation "4d9b1898"
+    2023-11-23T10:16:24Z: Evaluation triggered by job "frontend"
+    2023-11-23T10:16:24Z: Allocation "e64f1c27" created: node "8209211d", group "frontend"
+    2023-11-23T10:16:25Z: Evaluation within deployment: "c479aa8b"
+    2023-11-23T10:16:25Z: Evaluation status changed: "pending" -> "complete"
+==> 2023-11-23T10:16:25Z: Evaluation "4d9b1898" finished with status "complete"
+==> 2023-11-23T10:16:25Z: Monitoring deployment "c479aa8b"
+  ✓ Deployment "c479aa8b" successful
+    
+    2023-11-23T10:16:52Z
+    ID          = c479aa8b
+    Job ID      = frontend
+    Job Version = 0
+    Status      = successful
+    Description = Deployment completed successfully
+    
+    Deployed
+    Task Group  Desired  Placed  Healthy  Unhealthy  Progress Deadline
+    frontend    1        1       1        0          2023-11-23T10:26:51Z
+-->nomad status frontend
+o/P:
+
+ID            = frontend
+Name          = frontend
+Submit Date   = 2023-11-23T10:16:24Z
+Type          = service
+Priority      = 50
+Datacenters   = dc1
+Namespace     = default
+Node Pool     = default
+Status        = running
+Periodic      = false
+Parameterized = false
+
+Summary
+Task Group  Queued  Starting  Running  Failed  Complete  Lost  Unknown
+frontend    0       0         1        0       0         0     0
+
+Latest Deployment
+ID          = c479aa8b
+Status      = successful
+Description = Deployment completed successfully
+
+Deployed
+Task Group  Desired  Placed  Healthy  Unhealthy  Progress Deadline
+frontend    1        1       1        0          2023-11-23T10:26:51Z
+
+Allocations
+ID        Node ID   Task Group  Version  Desired  Status   Created    Modified
+e64f1c27  8209211d  frontend    0        run      running  2m40s ago  2m13s ago
+
