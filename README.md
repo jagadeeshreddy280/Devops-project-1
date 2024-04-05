@@ -34,67 +34,83 @@ linux ec2: https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-
 Nomad Installation :
 ---
 linux:
+```
+sudo yum install -y yum-utils
 
--->sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 
--->sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-
--->sudo yum -y install nomad
-
+sudo yum -y install nomad
+```
 ubuntu:
-
--->sudo apt-get update && \
-  sudo apt-get install wget gpg coreutils
-  
--->wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-
--->echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-
--->sudo apt-get update && sudo apt-get install nomad
-
--->nomad version
-
--->sudo nomad agent -dev \
+```
+sudo apt-get update && \
+sudo apt-get install wget gpg coreutils
+```
+``` 
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
+```
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
+```
+sudo apt-get update && sudo apt-get install nomad
+```
+```
+nomad version
+```
+```
+sudo nomad agent -dev \
   -bind 0.0.0.0 \
   -network-interface='{{ GetDefaultInterfaces | attr "name" }}'
-  
--->export NOMAD_ADDR=http://localhost:4646
+```
 
--->nomad node status
+export NOMAD_ADDR=http://localhost:4646
+```
+nomad node status
+```
 
 jenkins ec2:
 ---
-1.Install jenkins,Docker,install nomad but dont run,git
-
-2.sudo apt install docker.io
-
-3.sudo systemctl enable docker
-
-4.sudo systemctl start docker
-
-5.sudo systemctl status docker
-
-6.sudo systemctl status jenkins
-
-7.sudo apt-get update
-
-8.sudo apt install openjdk-11-jdk
-
-9.java --version
-
-10.sudo chmod 666 /var/run/docker.sock
-
-11.copy publicip:8080 on browser 
-
+Install jenkins,Docker,install nomad but dont run,git
+```
+sudo apt install docker.io
+```
+```
+sudo systemctl enable docker
+```
+```
+sudo systemctl start docker
+```
+```
+sudo systemctl status docker
+```
+```
+sudo systemctl status jenkins
+```
+```
+sudo apt-get update
+```
+```
+sudo apt install openjdk-11-jdk
+```
+```
+java --version
+```
+```
+sudo chmod 666 /var/run/docker.sock
+```
+```
+copy publicip:8080 on browser 
+```
   username: admin
   
   password: cat /var/lib/jenkins/secrets/initialAdminPassword
-  
-12.Go to manage jenkins--> plugins --> nomad
+```
+Go to manage jenkins--> plugins --> nomad
 
-13.Go to manage jenkins --> clouds --> click nomad option --> save
+Go to manage jenkins --> clouds --> click nomad option --> save
 
-14.copy nomad url and paste on Nomad API URL box --> test connection --> successfull
+copy nomad url and paste on Nomad API URL box --> test connection --> successfull
 
 if multi-node nomad need token 
 create a token on nomad --> click on Nomad ACl ADD dropdown --> click on secret text --> add token in secret --> ID as nomad token --> description as Nomad token--> save click on test connection it is succesfull. 
@@ -113,8 +129,10 @@ IN GITHUB:
 
 3. Copy Jenkins url like http://2.33.344.44:8080 and Add /github-webhook/
 
- Example: http://35.154.114.196:8080/github-webhook/
-
+ Example:
+```
+http://35.154.114.196:8080/github-webhook/
+```
 4.	Add in Payload URL --> save it.
 
 5.	Change anything or push any file into git repo we can see job is triggered automatically.
@@ -139,11 +157,12 @@ NOTE: Before building need to add plugins,save cred related to github,dockerhub,
 
 Github links
 ---
-
+```
 https://github.com/jagadeeshreddy280/app-frontend
-
+```
+```
 https://github.com/jagadeeshreddy280/app-nomad
-
+```
 
 
 Build Both the pipelines and check in Nomad UI.
