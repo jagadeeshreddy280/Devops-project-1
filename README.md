@@ -52,12 +52,15 @@ wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/sha
 ```
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 ```
+Installing nomad 
 ```
 sudo apt-get update && sudo apt-get install nomad
 ```
+checking the version
 ```
 nomad version
 ```
+Agent need to Run
 ```
 sudo nomad agent -dev \
   -bind 0.0.0.0 \
@@ -65,6 +68,8 @@ sudo nomad agent -dev \
 ```
 
 export NOMAD_ADDR=http://localhost:4646
+
+Check the Status of nomad
 ```
 nomad node status
 ```
@@ -72,30 +77,37 @@ nomad node status
 jenkins ec2:
 ---
 Install jenkins,Docker,install nomad but dont run,git
+Docker 
 ```
 sudo apt install docker.io
 ```
+Enableing the docker on ec2
 ```
 sudo systemctl enable docker
 ```
+Starting the docker on ec2
 ```
 sudo systemctl start docker
 ```
+Checking the status of docker 
 ```
 sudo systemctl status docker
 ```
+Checking the status of jenkins
 ```
 sudo systemctl status jenkins
 ```
 ```
 sudo apt-get update
 ```
+Need to install java latest version
 ```
 sudo apt install openjdk-11-jdk
 ```
 ```
 java --version
 ```
+Grant permission for docker 
 ```
 sudo chmod 666 /var/run/docker.sock
 ```
