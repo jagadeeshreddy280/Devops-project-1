@@ -107,6 +107,9 @@ sudo apt install openjdk-11-jdk
 ```
 java --version
 ```
+<img width="615" alt="Screenshot 2024-04-05 113946" src="https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/20d144be-a017-4463-90f2-3d0f5f7de128">
+
+
 Grant permission for docker 
 ```
 sudo chmod 666 /var/run/docker.sock
@@ -148,6 +151,9 @@ http://35.154.114.196:8080/github-webhook/
 4.	Add in Payload URL --> save it.
 
 5.	Change anything or push any file into git repo we can see job is triggered automatically.
+
+<img width="854" alt="Screenshot 2024-04-05 113646" src="https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/b95749f9-5b65-4eb5-8e2d-bec46f53b3fa">
+
 
 NOTE: 
 Save Git & Docker & nomad token in Jenkins
