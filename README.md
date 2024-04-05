@@ -201,7 +201,7 @@ http://35.154.114.196:8080/github-webhook/
  
 Build nomad job
 ---
-1. Create a pipeline --> add jenkinsfile  --> click on build
+1. Create a pipeline --> add jenkinsfile from github  --> click on build
 
 ![image](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/de23ef74-73b8-4502-b38d-418d7ee39b2e)
    
