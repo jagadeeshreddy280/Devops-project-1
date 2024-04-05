@@ -1,13 +1,4 @@
 # Devops-project-1
-Any Queries related
----
-
-Gmail : jagadeeshbhavanam@gmail.com
----
-
-linkedin : https://www.linkedin.com/in/bhavanam-jagadeeswara-reddy-1b85801b6
----
-
 
 Deploy an Application on Nomad Workload cluster using CI/CD
 ---
@@ -231,3 +222,12 @@ Nomad ec2:
 ![image](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/92b94b86-16ed-4aa3-aaf4-7782529ed245)
 
 3.copy public ip:80 --> Application Will open
+
+Any Queries related
+---
+
+Gmail : jagadeeshbhavanam@gmail.com
+---
+
+linkedin : https://www.linkedin.com/in/bhavanam-jagadeeswara-reddy-1b85801b6
+---
