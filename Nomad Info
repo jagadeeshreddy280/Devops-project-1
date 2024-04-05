@@ -1,22 +1,14 @@
--->Nomad is a flexible application scheduler and orchestrator that’s 
-simple to learn, quick to adopt, and easy to manage.
+-->Nomad is a flexible application scheduler and orchestrator that’s simple to learn, quick to adopt, and easy to manage.
 -->we can Schedule, deploy, and manage any application workload
--->Nomad handles filesystem isolation, networking, and resource 
-management for containers, binaries, VMs, Java JARs, and more.
--->Scale from a single instance to thousands of nodes in a cluster and 
-deploy across private datacenters or multi-cloud environments.
--->Manage workloads for edge devices like sensors or microcomputers that 
-aren’t continuously connected to central cloud centers.
+-->Nomad handles filesystem isolation, networking, and resource management for containers, binaries, VMs, Java JARs, and more.
+-->Scale from a single instance to thousands of nodes in a cluster and deploy across private datacenters or multi-cloud environments.
+-->Manage workloads for edge devices like sensors or microcomputers that aren’t continuously connected to central cloud centers.
 -->integrations with Terraform, Vault, Consul, and Waypoint.
--->Nomad supports a wide range of task drivers such as Docker, Java and 
-binaries running natively on the host operating system.
+-->Nomad supports a wide range of task drivers such as Docker, Java and binaries running natively on the host operating system.
 
-Nomad is a cluster manager, designed for both long lived services and 
-short lived batch processing workloads. Developers use a declarative job
-specification to submit work, and Nomad ensures constraints are satisfied
-and resource utilization is optimized by efficient task packing. 
-Nomad supports all major operating systems and virtualized, containerized,
-or standalone applications.
+Nomad is a cluster manager, designed for both long lived services and short lived batch processing workloads. Developers use a declarative job 
+specification to submit work, and Nomad ensures constraints are satisfiedand resource utilization is optimized by efficient task packing. 
+Nomad supports all major operating systems and virtualized, containerized,or standalone applications.
 Nomad is a tool in the Cluster Management category of a tech stack.
 
 
