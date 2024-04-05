@@ -114,7 +114,7 @@ Grant permission for docker
 ```
 sudo chmod 666 /var/run/docker.sock
 ```
-```
+
 copy publicip:8080 on browser 
 ```
   username: admin
