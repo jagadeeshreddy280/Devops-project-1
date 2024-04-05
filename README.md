@@ -159,11 +159,14 @@ nomad plugin & integration:
 ![image](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/54329e3e-7023-4ef6-a5e4-9c7675677796)
 
 
-NOTE : if multi-node nomad need token 
-```
-create a token on nomad --> click on Nomad ACl ADD dropdown -->click on secret text --> 
-add token in secret --> ID as nomad token --> description as Nomad token--> save click on test connection it is succesfull. 
-```
+NOTE : if multi-node nomad cluster is using we need token 
+
+create a token on nomad --> click on Nomad ACl ADD dropdown -->click on secret text  
+
+add token in secret --> ID as nomad token --> description as Nomad token
+
+save click on test connection it is succesfull. 
+
 ![image](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/dc365502-cbbc-4f71-a5cb-a1c42283124b)
 
 
