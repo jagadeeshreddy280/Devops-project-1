@@ -1,6 +1,6 @@
 # Devops-project-1
 
-![grafana](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/5b6f07c5-3940-4343-9f65-c95668968d82)
+![grafana](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/d9727be1-b5e1-43b3-ad58-f3ae7cdfef16)
 
 
 Deploy an Application on Nomad Workload cluster using CI/CD
