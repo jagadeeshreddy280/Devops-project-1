@@ -1,6 +1,5 @@
 # Devops-project-1
 
-![grafana](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/d9727be1-b5e1-43b3-ad58-f3ae7cdfef16)
 ![devops1 drawio](https://github.com/jagadeeshreddy280/Devops-project-1/assets/116871383/a37fa5c0-9362-44c0-ac43-75b30aecd9c4)
 
 
